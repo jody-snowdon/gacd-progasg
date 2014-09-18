@@ -46,8 +46,8 @@ allData <- rbind(trainSet, testSet)
 # add column names to the data 
 colnames(allData) <- c(featuresList$V2, "activity", "subject")
 #
-# ... and make them factors
-allData$activity <- as.factor(allData$activity)
+# ... and make them factors (using activity names)
+allData$activity <- as.factor(activityLabels$V2[allData$activity])
 allData$subject <- as.factor(allData$subject)
 #
 # calculate mean for each variable by the factors (activity and subject)
